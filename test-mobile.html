@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 64px;
+            background: white;
+            border-bottom: 2px solid red;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+        }
+        
+        .menu-btn {
+            width: 60px;
+            height: 60px;
+            background: red;
+            border: 2px solid darkred;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .menu-btn:hover {
+            background: darkred;
+            transform: scale(1.05);
+        }
+        
+        .menu-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 230px;
+            height: calc(100vh - 64px);
+            background: white;
+            border-right: 2px solid #ddd;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 9998;
+            padding: 20px;
+        }
+        
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9997;
+            display: none;
+        }
+        
+        .overlay.show {
+            display: block;
+        }
+        
+        .content {
+            margin-top: 64px;
+            padding: 20px;
+            min-height: calc(100vh - 64px);
+        }
+        
+        .debug {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: yellow;
+            padding: 4px 8px;
+            font-size: 12px;
+            z-index: 10000;
+        }
+        
+        @media (max-width: 992px) {
+            .debug {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 993px) {
+            .debug {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="debug" id="debug">MOBILE: <span id="width">0</span>px | <span id="status">CLOSED</span></div>
+    
+    <div class="header">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div style="margin-left: 16px; font-weight: bold; color: #333;">OrderPay</div>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+    
+    <div class="sidebar" id="sidebar">
+        <h3>เมนู</h3>
+        <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; cursor: pointer;" onclick="closeMenu()">แดชบอร์ด</li>
+            <li style="padding: 8px 0; cursor: pointer;" onclick="closeMenu()">ธุรกรรม</li>
+            <li style="padding: 8px 0; cursor: pointer;" onclick="closeMenu()">บัญชี</li>
+            <li style="padding: 8px 0; cursor: pointer;" onclick="closeMenu()">ตั้งค่า</li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <h1>ทดสอบระบบเลื่อนเมนู</h1>
+        <p>กดปุ่มเมนูสีแดงที่มุมซ้ายบนเพื่อทดสอบ</p>
+        <p>ขนาดหน้าจอ: <span id="screenWidth">0</span>px</p>
+        <p>สถานะเมนู: <span id="menuStatus">ปิด</span></p>
+        
+        <h2>วิธีทดสอบ:</h2>
+        <ol>
+            <li>เปิด Developer Tools (F12)</li>
+            <li>เปลี่ยนเป็น Mobile View (Ctrl+Shift+M)</li>
+            <li>กดปุ่มเมนูสีแดง</li>
+            <li>ดูการเลื่อนเมนู</li>
+        </ol>
+    </div>
+    
+    <script>
+        let menuOpen = false;
+        
+        function updateDebug() {
+            const width = window.innerWidth;
+            const isMobile = width <= 992;
+            document.getElementById('width').textContent = width;
+            document.getElementById('screenWidth').textContent = width;
+            document.getElementById('status').textContent = menuOpen ? 'OPEN' : 'CLOSED';
+            document.getElementById('menuStatus').textContent = menuOpen ? 'เปิด' : 'ปิด';
+            
+            console.log('📱 Screen width:', width, 'Mobile:', isMobile, 'Menu:', menuOpen ? 'OPEN' : 'CLOSED');
+        }
+        
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            if (menuOpen) {
+                sidebar.classList.add('open');
+                overlay.classList.add('show');
+                console.log('🔥 Menu opened');
+            } else {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('show');
+                console.log('🔥 Menu closed');
+            }
+            
+            updateDebug();
+        }
+        
+        function closeMenu() {
+            if (menuOpen) {
+                toggleMenu();
+            }
+        }
+        
+        // Initialize
+        updateDebug();
+        window.addEventListener('resize', updateDebug);
+        
+        // Test button click
+        console.log('🎯 Test page loaded');
+    </script>
+</body>
+</html>

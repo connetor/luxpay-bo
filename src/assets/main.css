@@ -1,0 +1,546 @@
+@import "tailwindcss";
+
+:root {
+  --sidebar-width: 280px;
+  /* OrderPay Enhanced Theme Colors - Based on Logo */
+  /* Teal palette (kept variable names for compatibility with existing classes) */
+  --thunder-yellow: #14B8A6;
+  --thunder-yellow-light: #CCFBF1;
+  --thunder-yellow-dark: #0D9488;
+  --thunder-yellow-accent: #2DD4BF;
+  --thunder-orange: #0F766E;
+  --thunder-orange-light: #99F6E4;
+  --thunder-black: #1a1a1a;
+  --thunder-gray: #2d2d2d;
+  --thunder-light-gray: #f8f9fa;
+  
+  /* Enhanced Gradients */
+  --thunder-gradient: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+  --thunder-gradient-light: linear-gradient(135deg, #CCFBF1 0%, #99F6E4 100%);
+  --thunder-gradient-dark: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+  --thunder-gradient-hero: linear-gradient(135deg, #14B8A6 0%, #0D9488 50%, #0F766E 100%);
+  
+  /* Enhanced Shadows */
+  --thunder-shadow: 0 8px 32px rgba(20, 184, 166, 0.35);
+  --thunder-shadow-light: 0 4px 16px rgba(20, 184, 166, 0.22);
+  --thunder-shadow-dark: 0 12px 40px rgba(13, 148, 136, 0.35);
+  --thunder-shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.collapsed :root {
+  --sidebar-width: 100px;
+}
+
+* {
+  font-family: 'IBM Plex Sans Thai', sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* OrderPay Button Styles */
+.btn-variant-solid-success {
+  color: #fff;
+  background: var(--thunder-gradient);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--thunder-shadow-light);
+}
+
+.btn-variant-solid-success:hover {
+  color: #fff;
+  background: var(--thunder-gradient);
+  box-shadow: var(--thunder-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-variant-solid-warning {
+  color: #fff;
+  background: var(--thunder-gradient);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--thunder-shadow-light);
+}
+
+.btn-variant-solid-warning:hover {
+  color: #fff !important;
+  background: var(--thunder-gradient);
+  box-shadow: var(--thunder-shadow);
+  transform: translateY(-2px);
+}
+
+/* OrderPay Primary Button */
+.btn-thunder-primary {
+  background: var(--thunder-gradient);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: var(--thunder-shadow-light);
+  cursor: pointer;
+}
+
+.btn-thunder-primary:hover {
+  background: var(--thunder-gradient);
+  box-shadow: var(--thunder-shadow);
+  transform: translateY(-2px);
+}
+
+.btn-thunder-primary:active {
+  transform: translateY(0);
+}
+
+.ant-table-column-title {
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+/* === Layout Classes === */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  @apply flex items-center w-full py-3 px-4 cursor-pointer text-gray-700 hover:bg-gradient-to-r hover:from-teal-50 hover:to-cyan-50 transition-all duration-300;
+  min-height: 48px;
+  border-radius: 8px;
+  margin: 2px 8px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item:hover {
+  color: #14b8a6;
+  box-shadow: var(--thunder-shadow-light);
+  transform: translateX(2px);
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--thunder-gradient);
+  transition: width 0.3s ease;
+  border-radius: 8px 0 0 8px;
+}
+
+.menu-item:hover::before {
+  width: 3px;
+}
+
+.menu-item-collapsed {
+  @apply justify-center;
+}
+
+.menu-item-expanded {
+  @apply justify-start;
+}
+
+.sidebar-title {
+  @apply block px-5 py-3 text-gray-600 text-sm font-semibold uppercase tracking-wide;
+  color: #14b8a6;
+  border-bottom: 2px solid rgba(20, 184, 166, 0.2);
+  margin: 16px 8px 8px 8px;
+}
+
+.app-title-padding {
+  padding: 0 0;
+}
+
+.app-title-padding-collapsed {
+  padding: 20px 0;
+}
+
+/* === Enhanced Active Menu Highlight === */
+.active li {
+  background: rgba(20, 184, 166, 0.1);
+  color: #14b8a6;
+  border-left: 4px solid #14b8a6;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
+  transform: translateX(2px);
+  position: relative;
+}
+
+.active li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #14b8a6;
+  border-radius: 0 4px 4px 0;
+}
+
+/* === Enhanced Layout Fixed Classes === */
+.layout-header-fixed {
+  background: linear-gradient(135deg, #ffffff 0%, #fff8dc 100%) !important;
+  color: var(--thunder-black) !important;
+  padding: 0 24px;
+  height: 64px;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid red !important;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile Menu Button Enhancement */
+.mobile-menu-btn {
+  min-width: 60px !important;
+  min-height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  position: relative !important;
+  z-index: 10000 !important;
+  background: red !important;
+  border: 3px solid darkred !important;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8) !important;
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95) !important;
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.1) !important;
+}
+
+@media (max-width: 992px) {
+  .layout-header-fixed {
+    padding: 0 16px !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  
+  .mobile-menu-btn {
+    background: red !important;
+    border: 3px solid darkred !important;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8) !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 99999 !important;
+  }
+  
+  .mobile-menu-btn:hover {
+    background: darkred !important;
+    transform: scale(1.1) !important;
+  }
+  
+  .mobile-menu-btn:active {
+    transform: scale(0.9) !important;
+    background: maroon !important;
+  }
+  
+  /* Force mobile header to be visible */
+  .navbar {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+  }
+  
+  /* Mobile sidebar animations */
+  .ant-layout-sider {
+    transition: transform 0.3s ease !important;
+  }
+  
+  .ant-layout-sider-collapsed {
+    transform: translateX(-100%) !important;
+  }
+  
+  .ant-layout-sider:not(.ant-layout-sider-collapsed) {
+    transform: translateX(0) !important;
+  }
+}
+
+.mobile-header {
+  left: 0 !important;
+  width: 100% !important;
+}
+
+.layout-sider-fixed {
+  @apply transition-all;
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 72px;
+  z-index: 101;
+  background: linear-gradient(180deg, #ffffff 0%, #fff8dc 100%) !important;
+  color: var(--thunder-black) !important;
+  box-shadow: var(--thunder-shadow-light);
+  border-right: 3px solid var(--thunder-yellow);
+  backdrop-filter: blur(10px);
+}
+
+.layout-content {
+  @apply p-4 sm:p-6 lg:p-[24px] mt-[64px];
+}
+
+.layout-wrapper {
+  @apply p-1 sm:p-2;
+}
+
+.router-view-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff8dc 100%);
+  min-height: calc(100vh - 64px);
+  border-radius: 24px 24px 0 0;
+  box-shadow: var(--thunder-shadow-card);
+  border: 1px solid var(--thunder-yellow-light);
+}
+
+/* Center the icon and content for sidebar-logo, especially when collapsed */
+.sidebar-logo {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* OrderPay Modern UI Enhancements */
+.thunder-glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.thunder-gradient-text {
+  background: var(--thunder-gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.thunder-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.thunder-hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--thunder-shadow-dark);
+}
+
+.thunder-card-enhanced {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--thunder-yellow-light);
+  box-shadow: var(--thunder-shadow-card);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.thunder-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--thunder-gradient);
+}
+
+.thunder-card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--thunder-shadow);
+  border-color: var(--thunder-yellow);
+}
+
+.thunder-button-enhanced {
+  background: var(--thunder-gradient-hero);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: var(--thunder-shadow-light);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.thunder-button-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.thunder-button-enhanced:hover::before {
+  left: 100%;
+}
+
+.thunder-button-enhanced:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--thunder-shadow);
+}
+
+.thunder-pulse {
+  animation: thunder-pulse 2s infinite;
+}
+
+@keyframes thunder-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.thunder-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--thunder-yellow-light) 0%,
+    var(--thunder-yellow) 50%,
+    var(--thunder-yellow-light) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--thunder-yellow-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--thunder-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--thunder-orange);
+}
+
+/* Modern Focus States */
+.focus-thunder:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--thunder-yellow);
+  ring-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .sidebar-logo {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .layout-wrapper {
+    margin-left: 0 !important;
+  }
+
+  .layout-sider-fixed {
+    width: 100% !important;
+  }
+}
+
+/* Added responsive styles for sidebar and layout wrapper */
+@media (max-width: 768px) {
+  .layout-wrapper {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .layout-sider-fixed {
+    position: absolute !important;
+    z-index: 999;
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
+  .layout-sider-fixed.collapsed {
+    width: 0 !important;
+  }
+  
+  @media (max-width: 992px) {
+    .layout-header-fixed {
+      left: 100% !important;
+      width: 100% !important;
+    }
+  }
+}
+
+/* Ant Design Modal Mask/Backdrop - ต้องมี z-index สูงกว่า sidebar */
+/* เพื่อให้ modal backdrop แสดงและบัง sidebar เมื่อเปิด modal */
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  z-index: 10001 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ant-modal-wrap {
+  z-index: 10001 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ant-modal {
+  z-index: 10002 !important;
+  position: relative !important;
+}

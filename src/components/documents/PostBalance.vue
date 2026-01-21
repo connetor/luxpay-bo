@@ -1,0 +1,45 @@
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+
+const columns = reactive({
+    headers: [
+        { title: 'Key' , dataIndex: 'key' , key: 'key' } ,
+        { title: 'Value' , dataIndex: 'value' , key: 'value' } ,
+    ] 
+})
+
+const headers = reactive([
+    { key: 'Content-Type' , value: 'application/json' } ,
+    { key: 'x-api-key' , value: '{ api key }'}
+])
+
+const data = reactive({
+    status: 'true' ,
+    msg: 'success' ,
+    data: {
+        balance: '1000.00'
+    }
+})
+const prettyJson = JSON.stringify(data, null, 2)
+const activeKey = ref('')
+</script>
+
+<template>
+    <a-card class="shadow-sm">
+        <template #extra>
+            <a target="_blank" href="https://documenter.getpostman.com/view/45735306/2sB3HtFce3#8593af45-ce82-4c80-b126-e3359d946859">คู่มือ</a>
+        </template>
+        <a-typography-title :level="4" style="margin-bottom: 6px;">Get Balance</a-typography-title>
+        <p class="text-gray-400"><span class="text-yellow-500 font-bold mr-[8px]">POST</span> { endPoint } /api/v1/mc/balance</p>
+        <p>ดึงยอดเงินคงเหลือ</p>
+
+        <a-collapse v-model:activeKey="activeKey" ghost>
+            <a-collapse-panel key="1" header="Headers">
+                <a-table :data-source="headers" :columns="columns.headers" />
+            </a-collapse-panel>
+            <a-collapse-panel key="3" header="Response (ตัวอย่าง)">
+                <pre class="bg-gray-900 text-green-300 text-sm p-4 rounded font-mono overflow-auto">{{ prettyJson }}</pre>
+            </a-collapse-panel>
+        </a-collapse>
+    </a-card>
+</template>

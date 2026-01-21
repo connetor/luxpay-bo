@@ -124,7 +124,7 @@ const resetForm = async () => {
                     @finish="onLoadTable"
                 > 
                     <a-row :gutter="24">
-                        <a-col :lg="8" :md="12" :xs="24">
+                        <a-col :lg="4" :md="12" :xs="24">
                             <a-form-item name="date" label="วันที่ทำรายการ">
                                 <a-range-picker 
                                     v-model:value="formStateSearch.date" 

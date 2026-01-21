@@ -5,6 +5,7 @@ import pkg from '../../package.json'
 import { useInitStore } from '@/stores/init'
 import { message } from 'ant-design-vue';
 import Lange from '@/components/Lange.vue';
+import { Icon } from '@iconify/vue';
 
 const { login } = useAuthStore()
 
@@ -150,17 +151,14 @@ const resetSecret = () => {
 <template>
   <div class="login-container">
     <div class="login-background">
-      <div class="login-card">
-        <!-- Logo Section -->
-        <div class="logo-section">
-          <div v-if="initStore.version == 2" class="logo-container">
-            <img :src="getLogoPath()" alt="LUXPAY Logo" class="logo-image">
+        <div class="login-card">
+          <div class="login-hero">
+            <div class="login-avatar">
+              <Icon icon="mdi:account-multiple-outline" width="72" height="72" />
+            </div>
+            <h1 class="login-title">User Login</h1>
+            <p class="login-subtitle">กรุณากรอกข้อมูลของคุณเพื่อดำเนินการต่อ</p>
           </div>
-          <div class="welcome-text">
-            <h1 class="welcome-title">เข้าสู่ระบบ</h1>
-            <p class="welcome-subtitle">กรุณากรอกข้อมูลของคุณเพื่อดำเนินการต่อ</p>
-          </div>
-        </div>
 
         <!-- Form Section -->
         <div class="form-section">
@@ -175,12 +173,20 @@ const resetSecret = () => {
               },
             ]" name="username">
               <a-input v-model:value="formState.username" placeholder="กรอกชื่อผู้ใช้" class="form-input"
-                size="large" />
+                size="large">
+                <template #prefix>
+                  <Icon icon="mdi:user-outline" width="18" height="18" />
+                </template>
+              </a-input>
             </a-form-item>
 
             <a-form-item label="รหัสผ่าน" :rules="[{ required: true, message: 'กรุณากรอกข้อมูล' }]" name="password">
               <a-input-password v-model:value="formState.password" placeholder="กรออกรหัสผ่าน" class="form-input"
-                size="large" />
+                size="large">
+                <template #prefix>
+                  <Icon icon="mdi:lock-outline" width="18" height="18" />
+                </template>
+              </a-input-password>
             </a-form-item>
 
             <a-form-item class="submit-section">
@@ -240,14 +246,14 @@ const resetSecret = () => {
 </template>
 
 <style scoped>
-/* Login Container with Teal Gradient Background */
+/* Login Container with soft gold gradient */
 .login-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(135deg, #f6dd9c 0%, #d9b35b 50%, #c4a255 100%);
+  background: linear-gradient(180deg, #f8f3e7 0%, #f1e1c7 45%, #d9b35b 100%);
   position: relative;
   overflow: hidden;
 }
@@ -282,63 +288,55 @@ const resetSecret = () => {
   z-index: 1;
 }
 
-/* Glassmorphism Card */
+/* Clean Card */
 .login-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
-  padding: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  padding: 36px 40px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   position: relative;
   overflow: hidden;
   color: #1f2937;
 }
 
 .login-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #f6dd9c 0%, #d9b35b 100%);
+  content: none;
 }
 
-/* Logo Section */
-.logo-section { 
-  text-align: center; 
-  margin-bottom: 32px; 
+/* Hero Section */
+.login-hero {
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.logo-container { 
-  margin-bottom: 24px; 
+.login-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(217, 179, 91, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8860b;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-.logo-image { 
-  width: 120px; 
-  height: auto; 
-  border-radius: 12px; 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); 
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: #6b7280;
+  letter-spacing: 0.2px;
 }
 
-.welcome-text { 
-  margin-bottom: 8px; 
-}
-
-.welcome-title { 
-  font-size: 28px; 
-  font-weight: 700; 
-  margin: 0 0 8px 0; 
-  color: #b8860b; 
-}
-
-.welcome-subtitle { 
-  font-size: 16px; 
-  color: #6b7280; 
-  margin: 0; 
-  font-weight: 500; 
+.login-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+  font-weight: 500;
 }
 
 /* Form Section */
@@ -351,12 +349,12 @@ const resetSecret = () => {
 }
 
 .form-input {
-  border-radius: 12px;
-  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
-  font-size: 16px;
-  padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  padding: 10px 14px;
+  background: #ffffff;
   color: #1f2937;
 }
 
@@ -373,11 +371,29 @@ const resetSecret = () => {
   box-shadow: 0 0 0 3px rgba(217, 179, 91, 0.2); 
 }
 
+/* Override global ant-input border for login only */
+.login-container :deep(.ant-input) {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.login-container :deep(.ant-input-affix-wrapper) {
+  border: 1px solid #d1d5db !important;
+  box-shadow: none !important;
+}
+
+.login-container :deep(.ant-input-affix-wrapper:hover),
+.login-container :deep(.ant-input-affix-wrapper-focused),
+.login-container :deep(.ant-input-affix-wrapper:focus) {
+  border-color: #d9b35b !important;
+  box-shadow: none !important;
+}
+
 /* Labels */
 :deep(.ant-form-item-label > label) { 
   font-weight: 600; 
-  color: #374151; 
-  font-size: 14px; 
+  color: #6b7280; 
+  font-size: 13px; 
 }
 
 /* Submit Button */
@@ -388,20 +404,20 @@ const resetSecret = () => {
 
 .login-button {
   width: 100%; 
-  height: 48px; 
-  border-radius: 12px; 
+  height: 44px; 
+  border-radius: 10px; 
   border: none; 
-  font-size: 16px; 
+  font-size: 15px; 
   font-weight: 600;
   background: linear-gradient(135deg, #f6dd9c 0%, #d9b35b 100%) !important;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(217, 179, 91, 0.35) !important;
+  box-shadow: 0 6px 16px rgba(217, 179, 91, 0.35) !important;
   transition: all 0.3s ease;
 }
 
 .login-button:hover { 
   transform: translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(217, 179, 91, 0.45) !important; 
+  box-shadow: 0 10px 22px rgba(217, 179, 91, 0.45) !important; 
   background: linear-gradient(135deg, #e9c778 0%, #c4a255 100%) !important;
 }
 

@@ -269,7 +269,7 @@ const handleCancelConfirm = () => {
                 <p>ค้นหา</p>
                 <a-form :required-mark="false" autocomplete="off" layout="vertical" :model="formStateSearch"> 
                     <a-row :gutter="24">
-                        <a-col :lg="8" :md="12" :xs="24">
+                        <a-col :lg="4" :md="12" :xs="24">
                             <a-form-item name="date" label="วันที่ทำรายการ">
                                 <a-range-picker 
                                     v-model:value="formStateSearch.date" 

@@ -156,7 +156,7 @@ const resetSecret = () => {
             <div class="login-avatar">
               <Icon icon="mdi:account-multiple-outline" width="72" height="72" />
             </div>
-            <h1 class="login-title">User Login</h1>
+            <h1 class="login-title">เข้าสู่ระบบ</h1>
             <p class="login-subtitle">กรุณากรอกข้อมูลของคุณเพื่อดำเนินการต่อ</p>
           </div>
 

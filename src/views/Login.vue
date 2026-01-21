@@ -154,7 +154,7 @@ const resetSecret = () => {
         <!-- Logo Section -->
         <div class="logo-section">
           <div v-if="initStore.version == 2" class="logo-container">
-            <img :src="getLogoPath()" alt="OrderPay Logo" class="logo-image">
+            <img :src="getLogoPath()" alt="LUXPAY Logo" class="logo-image">
           </div>
           <div class="welcome-text">
             <h1 class="welcome-title">เข้าสู่ระบบ</h1>

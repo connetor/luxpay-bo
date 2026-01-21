@@ -253,7 +253,7 @@ const dowloadChange = async () => {
 }
 
 .amount {
-  color: #14b8a6;
+  color: #d9b35b;
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 16px;
@@ -278,7 +278,7 @@ const dowloadChange = async () => {
 }
 
 .deadline-text {
-  color: #14b8a6;
+  color: #d9b35b;
   font-size: 16px;
   font-weight: 700;
 }

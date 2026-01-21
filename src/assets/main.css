@@ -2,7 +2,7 @@
 
 :root {
   --sidebar-width: 280px;
-  /* OrderPay Enhanced Theme Colors - Based on Logo */
+  /* LUXPAY Enhanced Theme Colors - Based on Logo */
   /* Teal palette (kept variable names for compatibility with existing classes) */
   --thunder-yellow: #14B8A6;
   --thunder-yellow-light: #CCFBF1;
@@ -37,7 +37,7 @@
   font-style: normal;
 }
 
-/* OrderPay Button Styles */
+/* LUXPAY Button Styles */
 .btn-variant-solid-success {
   color: #fff;
   background: var(--thunder-gradient);
@@ -72,7 +72,7 @@
   transform: translateY(-2px);
 }
 
-/* OrderPay Primary Button */
+/* LUXPAY Primary Button */
 .btn-thunder-primary {
   background: var(--thunder-gradient);
   color: #fff;
@@ -331,7 +331,7 @@
   justify-content: center;
 }
 
-/* OrderPay Modern UI Enhancements */
+/* LUXPAY Modern UI Enhancements */
 .thunder-glass {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.9);

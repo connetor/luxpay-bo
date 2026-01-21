@@ -184,8 +184,8 @@ const loadGraph = async () => {
                     {
                         label: 'ฝาก',
                         data: depositData,
-                        backgroundColor: '#14b8a6',
-                        borderColor: '#0d9488',
+                        backgroundColor: '#f3d58b',
+                        borderColor: '#d9b35b',
                         borderWidth: 2,
                     },
                     {
@@ -214,8 +214,8 @@ const loadGraph = async () => {
                     {
                         label: 'ฝาก',
                         data: deposit,
-                        backgroundColor: '#14b8a6',
-                        borderColor: '#0d9488',
+                        backgroundColor: '#f3d58b',
+                        borderColor: '#d9b35b',
                         borderWidth: 2,
                     },
                     {
@@ -649,23 +649,27 @@ onMounted(async () => {
 }
 
 .key-stat-card .stat-icon.success {
-    background: linear-gradient(135deg, #14b8a6, #0d9488);
-    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+    background: #e8f6ee;
+    color: #166534;
+    box-shadow: 0 4px 12px rgba(30, 126, 52, 0.15);
 }
 
 .key-stat-card .stat-icon.danger {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    background: #fde8e8;
+    color: #b91c1c;
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.18);
 }
 
 .key-stat-card .stat-icon.warning {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    background: #fff4d6;
+    color: #92400e;
+    box-shadow: 0 4px 12px rgba(183, 121, 31, 0.18);
 }
 
 .key-stat-card .stat-icon.primary {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+    background: #eaf2ff;
+    color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
 }
 
 .key-stat-card .stat-content {
@@ -675,7 +679,7 @@ onMounted(async () => {
 .key-stat-card .stat-title {
     font-size: 16px;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--gray-600);
     margin: 0 0 8px 0;
     line-height: 1.3;
 }
@@ -697,7 +701,7 @@ onMounted(async () => {
 }
 
 .key-stat-card .stat-change.positive {
-    color: #0d9488;
+    color: #166534;
 }
 
 .key-stat-card .stat-change.negative {
@@ -744,49 +748,57 @@ onMounted(async () => {
 }
 
 .stat-icon.primary {
-    background: var(--primary-light);
-    color: var(--primary-dark);
+    background: #eaf2ff;
+    color: #1d4ed8;
+    border: 1px solid #cfe0ff;
 }
 
 .stat-icon.success {
-    background: rgba(20, 184, 166, 0.1);
-    color: var(--success);
+    background: #e8f6ee;
+    color: #166534;
+    border: 1px solid #cfead8;
 }
 
 .stat-icon.light-success {
-    background: rgba(20, 184, 166, 0.05);
-    color: var(--success);
+    background: #f0fbf4;
+    color: #166534;
+    border: 1px solid #dbf0e2;
 }
 
 .stat-icon.warning {
-    background: rgba(245, 158, 11, 0.1);
-    color: var(--warning);
+    background: #fff4d6;
+    color: #92400e;
+    border: 1px solid #f6e3b2;
 }
 
 .stat-icon.light-warning {
-    background: rgba(245, 158, 11, 0.05);
-    color: var(--warning);
+    background: #fff9e6;
+    color: #92400e;
+    border: 1px solid #f7e9c8;
 }
 
 .stat-icon.danger {
-    background: rgba(239, 68, 68, 0.1);
-    color: var(--danger);
+    background: #fde8e8;
+    color: #b91c1c;
+    border: 1px solid #f7c7c7;
 }
 
 .stat-icon.light-danger {
-    background: rgba(239, 68, 68, 0.05);
-    color: var(--danger);
+    background: #fff1f1;
+    color: #b91c1c;
+    border: 1px solid #f6dada;
 }
 
 .stat-icon.light-primary {
-    background: rgba(251, 191, 36, 0.05);
-    color: var(--primary);
+    background: #eef4ff;
+    color: #1d4ed8;
+    border: 1px solid #d9e6ff;
 }
 
 .stat-title {
     font-size: 14px;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--gray-600);
     margin-bottom: 8px;
 }
 
@@ -806,7 +818,7 @@ onMounted(async () => {
 }
 
 .stat-change.positive {
-    color: var(--success);
+    color: #166534;
 }
 
 .stat-change.negative {

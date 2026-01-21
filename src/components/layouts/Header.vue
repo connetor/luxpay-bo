@@ -106,7 +106,7 @@ onUnmounted(() => {
         </svg>
       </div>
       <div class="logo-text">
-        <h1>OrderPay</h1>
+        <h1>LuxPay</h1>
         <span>Payment Gateway</span>
       </div>
     </div> -->
@@ -191,7 +191,7 @@ onUnmounted(() => {
   height: 60px;
   background: var(--white);
   /* border-bottom: 1px solid #f7aa14; */
-  border-bottom: 1px solid #14b8a6;
+  border-bottom: 1px solid #d9b35b;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -356,7 +356,7 @@ onUnmounted(() => {
 .user-avatar {
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  background: linear-gradient(135deg, #f3d58b, #d9b35b);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -379,7 +379,7 @@ onUnmounted(() => {
 
 .user-balance {
   font-size: 12px;
-  color: #14b8a6;
+  color: #d9b35b;
   font-weight: 600;
   line-height: 1;
 }
@@ -425,7 +425,7 @@ onUnmounted(() => {
 
 .dropdown-header {
   padding: 20px;
-  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  background: linear-gradient(135deg, #f3d58b 0%, #d9b35b 100%);
   color: white;
 }
 
@@ -482,7 +482,7 @@ onUnmounted(() => {
 
 .balance-amount {
   font-size: 18px;
-  color: #14b8a6;
+  color: #d9b35b;
   font-weight: 700;
 }
 

@@ -10,7 +10,7 @@ const ui = useUiStore()
         <div class="flex flex-col items-center gap-4">
             <ThunderSpinner size="xl" />
             <div class="text-center">
-                <h3 class="text-lg font-semibold text-thunder-orange mb-1">OrderPay</h3>
+                <h3 class="text-lg font-semibold text-thunder-orange mb-1">LuxPay</h3>
                 <p class="text-sm text-gray-600">กำลังโหลดข้อมูล...</p>
             </div>
         </div>

@@ -51,8 +51,8 @@ const sidebars = computed(() => {
       { 
         title: 'การเงิน',
         menus: [
-          { title: 'รายงานร้านค้า', link: '/transactions', icon: 'solar:document-text-bold', iconColor: '#14b8a6', permission: 'transactions.view' },
-          { title: 'เติมเงิน', link: '/topup', icon: 'solar:wallet-money-bold', iconColor: '#14b8a6', permission: 'topup.view' },
+          { title: 'รายงานร้านค้า', link: '/transactions', icon: 'solar:document-text-bold', iconColor: '#f3d58b', permission: 'transactions.view' },
+          { title: 'เติมเงิน', link: '/topup', icon: 'solar:wallet-money-bold', iconColor: '#f3d58b', permission: 'topup.view' },
           { title: 'โอนเงิน', link: '/transferout', icon: 'solar:card-send-bold', iconColor: '#ef4444', permission: 'transferout.view' },
           { title: 'กลุ่มลูกค้า', link: '/customers', icon: 'solar:users-group-rounded-bold', iconColor: '#06b6d4', permission: 'customers.view' },
         ]  
@@ -60,17 +60,17 @@ const sidebars = computed(() => {
       { 
         title: 'ร้านค้า',
         menus: [
-          { title: 'จัดการบัญชีร้านค้า', link: '/agent', icon: 'solar:shop-bold', iconColor: '#14b8a6', permission: 'agent.view' },
+          { title: 'จัดการบัญชีร้านค้า', link: '/agent', icon: 'solar:shop-bold', iconColor: '#f3d58b', permission: 'agent.view' },
           { title: 'รายได้' , link: '/profit' , icon: 'ph:graph-thin' , permission: 'agent.view' } ,
-          { title: 'ถอนรายได้', link: '/commission-recived', icon: 'solar:money-bag-bold', iconColor: '#14b8a6', permission: 'commission.view' },
+          { title: 'ถอนรายได้', link: '/commission-recived', icon: 'solar:money-bag-bold', iconColor: '#f3d58b', permission: 'commission.view' },
         ]  
       },
       { 
         title: 'บริหาร',
         menus: [
-          { title: 'จัดการร้านค้า', link: '/merchant', icon: 'solar:buildings-bold', iconColor: '#14b8a6', permission: 'merchant.view' },
+          { title: 'จัดการร้านค้า', link: '/merchant', icon: 'solar:buildings-bold', iconColor: '#f3d58b', permission: 'merchant.view' },
           { title: 'ธุรกรรมทั้งหมด', link: '/transactions/all', icon: 'solar:list-bold', iconColor: '#3b82f6', permission: 'all_transaction.view' },
-          { title: 'คืนเงินร้านค้า', link: '/refund', icon: 'solar:refresh-bold', iconColor: '#14b8a6', permission: 'refund.view' },
+          { title: 'คืนเงินร้านค้า', link: '/refund', icon: 'solar:refresh-bold', iconColor: '#f3d58b', permission: 'refund.view' },
           { title: 'ข้อความอัตโนมัติ', link: '/message', icon: 'solar:chat-round-dots-bold', iconColor: '#8b5cf6', permission: 'telegram_message.view' },
         ]  
       },
@@ -79,10 +79,10 @@ const sidebars = computed(() => {
         menus: [
           { title: 'ธนาคาร', link: '/banks', icon: 'mdi:bank', iconColor: '#0ea5e9', permission: 'bank.view' },
           { title: 'บัญชีธนาคาร', link: '/accounts', icon: 'mdi:credit-card', iconColor: '#6366f1', permission: 'account.view' },
-          { title: 'โยกเงินบัญชี', link: '/accounts/settlement', icon: 'mdi:swap-horizontal', iconColor: '#14b8a6', permission: 'settlement_account.view' },
+          { title: 'โยกเงินบัญชี', link: '/accounts/settlement', icon: 'mdi:swap-horizontal', iconColor: '#f3d58b', permission: 'settlement_account.view' },
           { title: 'กลุ่มบัญชี', link: '/account/groups', icon: 'solar:users-group-two-rounded-bold', iconColor: '#8b5cf6', permission: 'account.view' },
           { title: 'สเตทเม้นท์', link: '/statement', icon: 'solar:file-text-bold', iconColor: '#64748b', permission: 'statement.view' },
-          { title: 'อายัดเงินร้านค้า', link: '/freeze-balance-merchant', icon: 'material-symbols-light:money-off-rounded', iconColor: '#14b8a6', permission: 'merchant.view' },
+          { title: 'อายัดเงินร้านค้า', link: '/freeze-balance-merchant', icon: 'material-symbols-light:money-off-rounded', iconColor: '#f3d58b', permission: 'merchant.view' },
         ]  
       },
       { 
@@ -96,7 +96,7 @@ const sidebars = computed(() => {
         title: 'โปรไฟล์',
         menus: [
           { title: 'จัดการโปรไฟล์', link: '/profile', icon: 'solar:settings-bold', iconColor: '#64748b' },
-          { title: 'Api Key', link: '/api', icon: 'solar:code-bold', iconColor: '#84cc16', permission: 'api.view' },
+          { title: 'Api Key', link: '/api', icon: 'solar:code-bold', iconColor: '#f3d58b', permission: 'api.view' },
         ]  
       },
       {
@@ -118,8 +118,8 @@ const sidebars = computed(() => {
       { 
         title: 'ธุรกรรม',
         menus: [
-          { title: 'รายงานธุรกรรม', link: '/transactions', icon: 'solar:list-bold', iconColor: '#14b8a6', permission: 'transactions.view' },
-          { title: 'เติมเงิน', link: '/topup', icon: 'solar:wallet-money-bold', iconColor: '#14b8a6', permission: 'topup.view' },
+          { title: 'รายงานธุรกรรม', link: '/transactions', icon: 'solar:list-bold', iconColor: '#f3d58b', permission: 'transactions.view' },
+          { title: 'เติมเงิน', link: '/topup', icon: 'solar:wallet-money-bold', iconColor: '#f3d58b', permission: 'topup.view' },
           { title: 'โอนเงิน', link: '/transferout', icon: 'solar:card-send-bold', iconColor: '#ef4444', permission: 'transferout.view' },
           { title: 'กลุ่มลูกค้า', link: '/customers', icon: 'solar:users-group-rounded-bold', iconColor: '#06b6d4', permission: 'customers.view' },
         ]  
@@ -127,17 +127,17 @@ const sidebars = computed(() => {
       { 
         title: 'เอเยนต์',
         menus: [
-          { title: 'จัดการบัญชีเอเยนต์', link: '/agent', icon: 'solar:shop-bold', iconColor: '#14b8a6', permission: 'agent.view' },
+          { title: 'จัดการบัญชีเอเยนต์', link: '/agent', icon: 'solar:shop-bold', iconColor: '#f3d58b', permission: 'agent.view' },
           { title: 'รายได้' , link: '/profit' , icon: 'healthicons:money-bag-outline' , permission: 'agent.view' } ,
-          { title: 'ถอนรายได้', link: '/commission-recived', icon: 'solar:money-bag-bold', iconColor: '#14b8a6', permission: 'commission.view' }
+          { title: 'ถอนรายได้', link: '/commission-recived', icon: 'solar:money-bag-bold', iconColor: '#f3d58b', permission: 'commission.view' }
         ]  
       },
       { 
         title: 'บริหาร',
         menus: [
-          { title: 'จัดการร้านค้า', link: '/merchant', icon: 'solar:buildings-bold', iconColor: '#14b8a6', permission: 'merchant.view' },
+          { title: 'จัดการร้านค้า', link: '/merchant', icon: 'solar:buildings-bold', iconColor: '#f3d58b', permission: 'merchant.view' },
           { title: 'ธุรกรรมทั้งหมด', link: '/transactions/all', icon: 'solar:list-bold', iconColor: '#3b82f6', permission: 'all_transaction.view' },
-          { title: 'คืนเงินร้านค้า', link: '/refund', icon: 'solar:refresh-bold', iconColor: '#14b8a6', permission: 'refund.view' },
+          { title: 'คืนเงินร้านค้า', link: '/refund', icon: 'solar:refresh-bold', iconColor: '#f3d58b', permission: 'refund.view' },
           { title: 'ข้อความอัตโนมัติ', link: '/message', icon: 'solar:chat-round-dots-bold', iconColor: '#8b5cf6', permission: 'telegram_message.view' },
         ]  
       },
@@ -146,10 +146,10 @@ const sidebars = computed(() => {
         menus: [
           { title: 'ธนาคาร', link: '/banks', icon: 'mdi:bank', iconColor: '#0ea5e9', permission: 'bank.view' },
           { title: 'บัญชีธนาคาร', link: '/accounts', icon: 'mdi:credit-card', iconColor: '#6366f1', permission: 'account.view' },
-          { title: 'โยกเงินบัญชี', link: '/accounts/settlement', icon: 'mdi:swap-horizontal', iconColor: '#14b8a6', permission: 'settlement_account.view' },
+          { title: 'โยกเงินบัญชี', link: '/accounts/settlement', icon: 'mdi:swap-horizontal', iconColor: '#f3d58b', permission: 'settlement_account.view' },
           { title: 'กลุ่มบัญชี', link: '/account/groups', icon: 'solar:users-group-two-rounded-bold', iconColor: '#8b5cf6', permission: 'account.view' },
           { title: 'สเตทเม้นท์', link: '/statement', icon: 'solar:file-text-bold', iconColor: '#64748b', permission: 'statement.view' },
-          { title: 'อายัดเงินร้านค้า', link: '/freeze-balance-merchant', icon: 'material-symbols-light:money-off-rounded', iconColor: '#14b8a6', permission: 'merchant.view' },
+          { title: 'อายัดเงินร้านค้า', link: '/freeze-balance-merchant', icon: 'material-symbols-light:money-off-rounded', iconColor: '#f3d58b', permission: 'merchant.view' },
         ]  
       },
       { 
@@ -163,14 +163,14 @@ const sidebars = computed(() => {
         title: 'โปรไฟล์',
         menus: [
           { title: 'จัดการโปรไฟล์', link: '/profile', icon: 'solar:settings-bold', iconColor: '#64748b' },
-          { title: 'Api Key', link: '/api', icon: 'solar:code-bold', iconColor: '#84cc16', permission: 'api.view' },
+          { title: 'Api Key', link: '/api', icon: 'solar:code-bold', iconColor: '#f3d58b', permission: 'api.view' },
         ]  
       },
       {
         title: 'อื่นๆ',
         menus: [
           { title: 'ตั้งค่าระบบ', link: '/setting', icon: 'solar:settings-minimalistic-bold', iconColor: '#64748b', permission: 'setting.view' },
-          { title: 'คู่มือ', link: '/mannul', icon: 'solar:book-bold', iconColor: '#14b8a6' },
+          { title: 'คู่มือ', link: '/mannul', icon: 'solar:book-bold', iconColor: '#f3d58b' },
           { title: 'แบล็คลิสต์ลูกค้า' , link: '/blacklist' , icon: 'ph:users-four-thin'} ,
           { title: 'บัญชีที่โดนบล็อค' , link: '/blocked-account' , icon: 'mdi-badge-account-horizontal-outline' , permission: 'blacklist.view'} ,
         ]
@@ -227,14 +227,11 @@ const handleMenuItemClick = (path: string) => {
 
 // App title and logo
 const appTitle = import.meta.env.VITE_APP_TITLE
-// const appTitle = 'ORDERPAY'
+// const appTitle = 'LUXPAY'
 
 const getLogoPath = () => {
   const logoMap: Record<string, string> = {
-    // BiBPAY: '/logo/logo_bib.png',
-    // FPAY: '/logo/logo_fp.png',
-    // THPAY: '/logo/logo_thpay.png',
-    ORDERPAY: '/logo/order-2.png'
+    LUXPAY: '/logo/luxpay-2.png'
   }
   return logoMap[appTitle] || '/favicon.ico'
 }
@@ -274,7 +271,7 @@ onUnmounted(() => {
       <div class="header-logo">
         <div class="logo-icon">
           <!-- <img :src="getLogoPath()" alt="Logo" class="logo-image"> -->
-          <img src="/logo/order-2.png" alt="Logo" class="logo-image">
+          <img src="/logo/luxpay-2.png" alt="Logo" class="logo-image">
         </div>
         <!-- <div class="logo-text" v-if="!ui.collapsed">
           <h2>{{ appTitle }}</h2>
@@ -348,7 +345,7 @@ onUnmounted(() => {
   height: 100vh;
   background: var(--white);
   /* border-right: 1px solid #fabb22; */
-  border-right: 1px solid #14b8a6;
+  border-right: 1px solid #d9b35b;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
   z-index: 1001;
   transform: translateX(-100%);
@@ -396,7 +393,7 @@ onUnmounted(() => {
 .sidebar-header {
   padding: 24px 20px;
   /* border-bottom: 1px solid #faba20; */
-  border-bottom: 1px solid #14b8a6;
+  border-bottom: 1px solid #d9b35b;
   background: var(--white);
   position: relative;
   overflow: hidden;
@@ -421,8 +418,8 @@ onUnmounted(() => {
 }
 
 .logo-icon {
-  width: 200px;
-  height: 80px;
+  /* width: 200px;
+  height: 80px; */
   border-radius: 10px;
   display: flex;
   align-items: center;

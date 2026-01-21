@@ -412,29 +412,33 @@ onMounted(async () => {
 }
 
 .stat-icon.primary {
-  background: var(--primary-light);
-  color: var(--primary-dark);
+  background: #eaf2ff;
+  color: #1d4ed8;
+  border: 1px solid #cfe0ff;
 }
 
 .stat-icon.success {
-  background: rgba(20, 184, 166, 0.1);
-  color: var(--success);
+  background: #e8f6ee;
+  color: #166534;
+  border: 1px solid #cfead8;
 }
 
 .stat-icon.warning {
-  background: rgba(245, 158, 11, 0.1);
-  color: var(--warning);
+  background: #fff4d6;
+  color: #92400e;
+  border: 1px solid #f6e3b2;
 }
 
 .stat-icon.danger {
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--danger);
+  background: #fde8e8;
+  color: #b91c1c;
+  border: 1px solid #f7c7c7;
 }
 
 .stat-title {
   font-size: 14px;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--gray-600);
   margin-bottom: 8px;
 }
 
@@ -454,7 +458,7 @@ onMounted(async () => {
 }
 
 .stat-change.positive {
-  color: var(--success);
+  color: #166534;
 }
 
 .stat-change.negative {

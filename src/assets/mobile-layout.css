@@ -1,4 +1,4 @@
-/* OrderPay Mobile Layout CSS */
+/* LUXPAY Mobile Layout CSS */
 
 /* Reset and Base Styles */
 * {
@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* OrderPay Color Variables */
+/* LUXPAY Color Variables */
 :root {
   --thunder-primary: #ffd700;
   --thunder-secondary: #ff8c00;

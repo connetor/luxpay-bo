@@ -23,24 +23,24 @@ const locale = computed(() => {
 const tokenTheme = computed(() => {
   if(initStore.version == 2) {
     return {
-      colorPrimary: '#14b8a6',
-      colorSuccess: '#0d9488',
-      colorWarning: '#14b8a6',
-      colorInfo: '#14b8a6',
+      colorPrimary: '#f3d58b',
+      colorSuccess: '#cfa850',
+      colorWarning: '#f3d58b',
+      colorInfo: '#e9c778',
       borderRadius: 8,
-      boxShadow: '0 4px 20px rgba(20, 184, 166, 0.3)',
-      boxShadowSecondary: '0 2px 10px rgba(20, 184, 166, 0.2)',
+      boxShadow: '0 4px 20px rgba(243, 213, 139, 0.3)',
+      boxShadowSecondary: '0 2px 10px rgba(243, 213, 139, 0.2)',
     }
   }
   else {
     return {
-      colorPrimary: '#14b8a6',
-      colorSuccess: '#0d9488',
-      colorWarning: '#14b8a6',
-      colorInfo: '#14b8a6',
+      colorPrimary: '#f3d58b',
+      colorSuccess: '#cfa850',
+      colorWarning: '#f3d58b',
+      colorInfo: '#e9c778',
       borderRadius: 8,
-      boxShadow: '0 4px 20px rgba(20, 184, 166, 0.3)',
-      boxShadowSecondary: '0 2px 10px rgba(20, 184, 166, 0.2)',
+      boxShadow: '0 4px 20px rgba(243, 213, 139, 0.3)',
+      boxShadowSecondary: '0 2px 10px rgba(243, 213, 139, 0.2)',
     }
   }
 })

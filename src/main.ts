@@ -26,14 +26,10 @@ app.component('QuillEditor', QuillEditor)
 
 app.mount('#app')
 
-const appTitle = (import.meta as any).env?.VITE_APP_TITLE || 'ORDERPAY'
+const appTitle = (import.meta as any).env?.VITE_APP_TITLE || 'LUXPAY'
 
 const faviconMap: Record<string, string> = {
-//   MaiMeePay: '/favicon.ico',
-  // BiBPAY: '/logo/logo_bib.png',
-  // เพิ่มชื่อแอปและโลโก้ได้ตามต้องการ,
-  // FPAY: '/logo/logo_fp.png',
-  ORDERPAY: '/logo/order-1.png'
+  LUXPAY: '/logo/lux-1.png'
 };
 
 // Set favicon dynamically
@@ -46,13 +42,13 @@ const setFavicon = () => {
   const favicon = document.createElement('link');
   favicon.rel = 'icon';
   favicon.type = 'image/png';
-  favicon.href = faviconMap[appTitle] || '/logo/order-1.png';
+  favicon.href = faviconMap[appTitle] || '/logo/lux-1.png';
   document.head.appendChild(favicon);
   
   // Also set apple-touch-icon for better mobile support
   const appleIcon = document.createElement('link');
   appleIcon.rel = 'apple-touch-icon';
-  appleIcon.href = faviconMap[appTitle] || '/logo/order-1.png';
+  appleIcon.href = faviconMap[appTitle] || '/logo/lux-1.png';
   document.head.appendChild(appleIcon);
 };
 

@@ -9,7 +9,7 @@
           </svg>
         </div>
         <div class="hero-text">
-          <h1 class="hero-title">แดชบอร์ด OrderPay</h1>
+          <h1 class="hero-title">แดชบอร์ด LUXPAY</h1>
           <p class="hero-subtitle">ข้อมูลเชิงลึกทางการเงินแบบเรียลไทม์</p>
         </div>
       </div>

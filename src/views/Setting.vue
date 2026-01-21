@@ -63,10 +63,10 @@ const tabs = ref([
         key: 'maintenance' ,
         tab: 'ช่วงเวลาให้บริการ'
     },  
-    {
-        key: 'commission' ,
-        tab: 'ค่าคอมมิชชั่น'
-    },  
+    // {
+    //     key: 'commission' ,
+    //     tab: 'ค่าคอมมิชชั่น'
+    // },  
 ])
 
 const days = [
@@ -166,7 +166,7 @@ const onFinish = async (data: typeof formState) => {
         
         <a-col :span="24">
             <a-row :gutter="[24 , 24]">
-                <a-col :lg="4" :md="24" :xs="24">
+                <a-col :lg="5" :md="24" :xs="24">
                     <a-card class="shadow-sm">
                         <ul class="tab-list">
                             <li 
@@ -203,7 +203,7 @@ const onFinish = async (data: typeof formState) => {
                         </ul>
                     </a-card >
                 </a-col>
-                <a-col :lg="20" :md="24" :xs="24">
+                <a-col :lg="19" :md="24" :xs="24">
                     <a-spin :spinning="loading">
                         <a-card class="shadow-sm" v-if="active === 'info'">
                             <template #title>
@@ -361,6 +361,27 @@ const onFinish = async (data: typeof formState) => {
                                                         style="width: 100%;" 
                                                         :disabled="!permissions.includes('setting.update')"
                                                     />
+                                                </a-form-item>
+                                            </a-col>
+                                        </a-row>
+                                    </a-col>
+
+                                    <a-col :span="24" class="mb-[20px]">
+                                        <LineCute></LineCute>
+                                    </a-col>
+
+                                    <a-col :span="24">
+                                        <a-typography-title :level="4" style="color: var(--gray-800);">ระบบคอมมิชชั่น</a-typography-title>
+                                    </a-col>
+                                    <a-col :span="24">
+                                        <a-row align="middle">
+                                            <a-col :lg="3" :md="12" :xs="12">
+                                                <p style="color: var(--gray-800);">สถานะ</p>
+                                            </a-col>
+                                            <a-col :lg="21" :md="12" :xs="12">
+                                                <a-form-item name="statusCommission">
+                                                    <a-switch v-model:checked="formState.statusCommission" :disabled="!permissions.includes('setting.update')" />
+                                                    <span class="ml-[8px] text-xs" style="margin-left: 10px;">{{ formState.statusCommission ? 'เปิดใช้งาน' : 'ปิดใช้งาน' }}</span>
                                                 </a-form-item>
                                             </a-col>
                                         </a-row>
@@ -546,7 +567,7 @@ const onFinish = async (data: typeof formState) => {
                             </a-form>
                         </a-card>
 
-                        <a-card class="shadow-sm" v-else-if="active === 'commission'">
+                        <!-- <a-card class="shadow-sm" v-else-if="active === 'commission'">
                             <template #title>
                                 <a-typography-title :level="4" style="margin-bottom: 0px; color: white;">ค่าคอมมิชชั่น</a-typography-title>
                             </template>
@@ -592,7 +613,7 @@ const onFinish = async (data: typeof formState) => {
                                     </a-col>
                                 </a-row>
                             </a-form>
-                        </a-card>
+                        </a-card> -->
 
                     </a-spin>
 

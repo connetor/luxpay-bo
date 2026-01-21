@@ -566,7 +566,7 @@ onUnmounted(() => {
 
 .nav-link.active .nav-icon {
   transform: scale(1.1);
-  color: var(--primary) !important;
+  color: var(--gray-600) !important;
   filter: brightness(1.2);
 }
 

@@ -247,7 +247,7 @@ const resetSecret = () => {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 50%, #0F766E 100%);
+  background: linear-gradient(135deg, #f6dd9c 0%, #d9b35b 50%, #c4a255 100%);
   position: relative;
   overflow: hidden;
 }
@@ -303,7 +303,7 @@ const resetSecret = () => {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #14B8A6 0%, #0D9488 100%);
+  background: linear-gradient(90deg, #f6dd9c 0%, #d9b35b 100%);
 }
 
 /* Logo Section */
@@ -331,7 +331,7 @@ const resetSecret = () => {
   font-size: 28px; 
   font-weight: 700; 
   margin: 0 0 8px 0; 
-  color: #0D9488; 
+  color: #b8860b; 
 }
 
 .welcome-subtitle { 
@@ -365,12 +365,12 @@ const resetSecret = () => {
 }
 
 .form-input:hover { 
-  border-color: #14B8A6; 
+  border-color: #d9b35b; 
 }
 
 .form-input:focus { 
-  border-color: #14B8A6; 
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15); 
+  border-color: #d9b35b; 
+  box-shadow: 0 0 0 3px rgba(217, 179, 91, 0.2); 
 }
 
 /* Labels */
@@ -393,16 +393,16 @@ const resetSecret = () => {
   border: none; 
   font-size: 16px; 
   font-weight: 600;
-  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+  background: linear-gradient(135deg, #f6dd9c 0%, #d9b35b 100%) !important;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 4px 12px rgba(217, 179, 91, 0.35) !important;
   transition: all 0.3s ease;
 }
 
 .login-button:hover { 
   transform: translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.4); 
-  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+  box-shadow: 0 8px 20px rgba(217, 179, 91, 0.45) !important; 
+  background: linear-gradient(135deg, #e9c778 0%, #c4a255 100%) !important;
 }
 
 .login-button:active { 
@@ -454,7 +454,7 @@ const resetSecret = () => {
 }
 
 .twofa-modal :deep(.ant-modal-close:hover) { 
-  color: #14B8A6; 
+  color: #d9b35b; 
 }
 
 .modal-content { 
@@ -470,7 +470,7 @@ const resetSecret = () => {
 .modal-title { 
   font-size: 20px; 
   font-weight: 700; 
-  color: #0D9488; 
+  color: #b8860b; 
   margin: 0 0 8px 0; 
 }
 
@@ -509,12 +509,12 @@ const resetSecret = () => {
 }
 
 .otp-input:hover { 
-  border-color: #14B8A6; 
+  border-color: #d9b35b; 
 }
 
 .otp-input:focus { 
-  border-color: #14B8A6; 
-  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.15); 
+  border-color: #d9b35b; 
+  box-shadow: 0 0 0 3px rgba(217, 179, 91, 0.2); 
 }
 
 .modal-submit-section { 
@@ -525,19 +525,19 @@ const resetSecret = () => {
   width: 100%; 
   height: 44px; 
   border-radius: 12px; 
-  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%); 
+  background: linear-gradient(135deg, #f6dd9c 0%, #d9b35b 100%) !important; 
   border: none; 
   font-size: 16px; 
   font-weight: 600; 
-  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3); 
+  box-shadow: 0 4px 12px rgba(217, 179, 91, 0.35); 
   color: #ffffff; 
   transition: all 0.3s ease;
 }
 
 .modal-button:hover { 
   transform: translateY(-2px); 
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.4); 
-  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+  box-shadow: 0 8px 20px rgba(217, 179, 91, 0.45); 
+  background: linear-gradient(135deg, #e9c778 0%, #c4a255 100%) !important;
 }
 
 /* Responsive */

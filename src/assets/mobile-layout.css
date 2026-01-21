@@ -1,4 +1,4 @@
-/* LUXPAY Mobile Layout CSS */
+/* LUKPAY Mobile Layout CSS */
 
 /* Reset and Base Styles */
 * {
@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* LUXPAY Color Variables */
+/* LUKPAY Color Variables */
 :root {
   --thunder-primary: #ffd700;
   --thunder-secondary: #ff8c00;

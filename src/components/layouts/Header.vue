@@ -106,7 +106,7 @@ onUnmounted(() => {
         </svg>
       </div>
       <div class="logo-text">
-        <h1>LuxPay</h1>
+        <h1>LUKPAY</h1>
         <span>Payment Gateway</span>
       </div>
     </div> -->

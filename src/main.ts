@@ -26,10 +26,10 @@ app.component('QuillEditor', QuillEditor)
 
 app.mount('#app')
 
-const appTitle = (import.meta as any).env?.VITE_APP_TITLE || 'LUXPAY'
+const appTitle = (import.meta as any).env?.VITE_APP_TITLE || 'LUKPAY'
 
 const faviconMap: Record<string, string> = {
-  LUXPAY: '/logo/lux-1.png'
+  LUKPAY: '/logo/luk-1.png'
 };
 
 // Set favicon dynamically
@@ -42,7 +42,7 @@ const setFavicon = () => {
   const favicon = document.createElement('link');
   favicon.rel = 'icon';
   favicon.type = 'image/png';
-  favicon.href = faviconMap[appTitle] || '/logo/lux-1.png';
+  favicon.href = faviconMap[appTitle] || '/logo/luk-1.png';
   document.head.appendChild(favicon);
   
   // Also set apple-touch-icon for better mobile support

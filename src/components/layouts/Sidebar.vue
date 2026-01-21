@@ -227,11 +227,11 @@ const handleMenuItemClick = (path: string) => {
 
 // App title and logo
 const appTitle = import.meta.env.VITE_APP_TITLE
-// const appTitle = 'LUXPAY'
+// const appTitle = 'LUKPAY'
 
 const getLogoPath = () => {
   const logoMap: Record<string, string> = {
-    LUXPAY: '/logo/luxpay-2.png'
+    LUKPAY: '/logo/lukpay-3.png'
   }
   return logoMap[appTitle] || '/favicon.ico'
 }
@@ -271,7 +271,7 @@ onUnmounted(() => {
       <div class="header-logo">
         <div class="logo-icon">
           <!-- <img :src="getLogoPath()" alt="Logo" class="logo-image"> -->
-          <img src="/logo/luxpay-2.png" alt="Logo" class="logo-image">
+          <img src="/logo/lukpay-3.png" alt="Logo" class="logo-image">
         </div>
         <!-- <div class="logo-text" v-if="!ui.collapsed">
           <h2>{{ appTitle }}</h2>

@@ -877,6 +877,20 @@ body {
   color: var(--gray-400) !important;
 }
 
+/* Ensure select dropdown is clickable and above overlays */
+.ant-select-dropdown {
+  z-index: 10050 !important;
+  pointer-events: auto !important;
+}
+
+.ant-select-dropdown .ant-select-item {
+  pointer-events: auto !important;
+}
+
+.ant-select-dropdown .ant-select-item-option {
+  cursor: pointer;
+}
+
 /* Ant Design DatePicker Styles */
 .ant-picker {
   background: #ffffff !important;

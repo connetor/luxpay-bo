@@ -749,4 +749,16 @@ const handleCancelConfirm = () => {
     height: 200px !important;
   }
 }
+
+/* Force upload card to fill the column width on this page */
+.upload-img-bank,
+.upload-img-bank .ant-upload-wrapper,
+.upload-img-bank .ant-upload,
+.upload-img-bank .ant-upload-select,
+.upload-img-bank .ant-upload-select-picture-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
 </style>

@@ -85,7 +85,10 @@ const defaultConfirmFormState = { ...confirmFormState }
 const onLoadAccount = async () => {
     isLoading.account = true 
     try {
-        accounts.value = await api.get('api/v1/bo/account/list/options' , { params: { search: isSearch.account }}).then(res => res.data.data)
+        const data = await api
+            .get('api/v1/bo/account/list/options', { params: { search: isSearch.account } })
+            .then(res => res.data.data)
+        accounts.value = data.filter((item: { status?: boolean }) => item.status === true)
     } catch(e) {}
     isLoading.account = false 
 }
@@ -466,6 +469,8 @@ const handleCancelConfirm = () => {
                                                     </div>
                                                     <a-tag color="success" style="margin-left: auto;" v-if="isAccount(value)?.status">เปิดใช้งาน</a-tag>
                                                     <a-tag color="error" style="margin-left: auto;" v-else>ปิดใช้งาน</a-tag>
+                                                    <a-tag color="success" style="margin-left: auto;" v-if="isAccount(value)?.type == 'deposit'">ฝาก</a-tag>
+                                                    <a-tag color="error" style="margin-left: auto;" v-else>ถอน</a-tag>
                                                 </template>
                                                 <template v-else>
                                                     <span>ไม่พบข้อมูลบัญชี</span>
@@ -488,6 +493,7 @@ const handleCancelConfirm = () => {
                                         show-search
                                         :filter-option="false"
                                         @search="onSearchMerchant"
+                                        dropdownClassName="merchant-select-dropdown"
                                     >
 
                                         <a-select-option :value="item.id" v-for="item , index in merchants" :key="index">
@@ -500,9 +506,11 @@ const handleCancelConfirm = () => {
 
                                         <template #option="{ value }">
                                             <div class="flex gap-2 items-center">
-                                                <div class="flex flex-col">
+                                                <div class="merchant-option flex w-full flex-col">
                                                     <span class="font-semibold">{{ isMerchant(value)?.prefix }}</span>
-                                                    <span class="text-xs text-gray-500">{{ isMerchant(value)?.name }}</span>
+                                                    <span class="text-xs text-gray-400 mt-1">
+                                                        {{ isMerchant(value)?.name }}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </template>
@@ -528,7 +536,7 @@ const handleCancelConfirm = () => {
                                             class="uploaded-image"
                                         />
                                         <div v-else>
-                                            <div class="flex items-center justify-center h-[320px] gap-2 flex-col opacity-[0.75] hover:opacity-[.90]">
+                                            <div class="upload-placeholder opacity-[0.75] hover:opacity-[.90]">
                                                 <Icon icon="mdi-light:image" width="24" height="24" />
                                                 <div class="mt-[8px] font-bold text-xs">คลิกอัพโหลด หรือ ลากไฟล์มาวางที่นี่</div>
                                                 <div class="mt-[8px] font-bold text-xs">* ไฟล์รูปภาพมีขนาดไม่เกิน 3 MB *</div>
@@ -576,7 +584,7 @@ const handleCancelConfirm = () => {
                                     :rules="[{ required: true, message: 'กรุณากรอกข้อมูล' }]"
                                     name="amount"
                                 >
-                                    <a-input-number v-model:value="formState.amount" :min="0" class="w-full" placeholder="กรุณากรอกข้อมูล">
+                                <a-input-number v-model:value="formState.amount" :min="0" class="amount-full w-full" placeholder="กรุณากรอกข้อมูล">
                                         <template #addonBefore>
                                             <Icon icon="iconoir:coin" ></Icon>
                                         </template>
@@ -760,5 +768,53 @@ const handleCancelConfirm = () => {
     max-width: 100% !important;
     box-sizing: border-box !important;
     display: block !important;
+    height: 100% !important;
+}
+
+.upload-img-bank .ant-upload,
+.upload-img-bank .ant-upload-select,
+.upload-img-bank .ant-upload-select-picture-card {
+    min-height: 320px;
+}
+
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 320px;
+    gap: 8px;
+}
+
+.amount-full,
+.amount-full .ant-input-number,
+.amount-full .ant-input-number-group-wrapper,
+.amount-full .ant-input-number-group,
+.amount-full .ant-input-number-input-wrap,
+.amount-full .ant-input-number-input {
+    width: 100% !important;
+}
+
+.merchant-option {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.merchant-select-dropdown .ant-select-item-option {
+    height: auto !important;
+    padding: 8px 12px !important;
+    border-bottom: 1px solid var(--gray-100);
+    align-items: flex-start !important;
+}
+
+.merchant-select-dropdown .ant-select-item-option:last-child {
+    border-bottom: none;
+}
+
+.merchant-select-dropdown .ant-select-item-option-content {
+    white-space: normal !important;
+    line-height: 1.25 !important;
 }
 </style>

@@ -41,7 +41,7 @@ import { Icon } from '@iconify/vue';
                                 <span>Examples</span>
                             </li>
                         </ul>
-                        <a-typography-link href="https://documenter.getpostman.com/view/39203775/2sB3dWqmWb" target="_blank">
+                        <a-typography-link href="https://documenter.getpostman.com/view/12273327/2sBXVkCA7m" target="_blank">
                             <a-button type="primary" class="read-button api-button" size="large">
                                 <Icon icon="solar:document-text-bold" width="20" height="20" class="mr-2" />
                                 <span>อ่านเอกสาร API</span>
